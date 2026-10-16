@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Mostrador Gestión</title>
+<meta name="description" content="Mostrador: gestión de inventario y punto de venta para comercios de Argentina. Ventas, stock con kardex, caja, proveedores, fiado e informes.">
+<meta name="theme-color" content="#13222f">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/app.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" defer></script>
+</head>
+<body>
+<div class="app" id="app">
+  <aside class="side">
+    <div class="brand"><div class="brand-mark" aria-hidden="true">M</div><div><div class="brand-name">Mostrador</div><div class="brand-sub" id="side-biz"></div></div></div>
+    <nav class="nav" id="nav" aria-label="Secciones"></nav>
+    <div class="side-foot" id="side-foot"></div>
+  </aside>
+  <div class="main">
+    <div class="topbar"><div class="brand-mark" aria-hidden="true">M</div><b id="top-biz">Mostrador</b></div>
+    <div class="demo-strip" id="demo-strip" hidden>Demostración con datos ficticios · los comprobantes no tienen validez fiscal</div>
+    <div id="banners"></div>
+    <div class="statusbar" id="statusbar"></div>
+    <main class="page" id="main"><p class="muted">Cargando Mostrador…</p></main>
+  </div>
+</div>
+<div class="fatal" id="fatal" hidden></div>
+<nav class="bnav" id="bnav" aria-label="Secciones principales"></nav>
+<div class="modal" id="modal" hidden><div class="modal-card" id="modal-card" role="dialog" aria-modal="true"></div></div>
+<div class="toast" id="toast" role="status" hidden></div>
+<div id="print-area" aria-hidden="true"></div>
+<noscript><p style="padding:20px">Mostrador necesita JavaScript activado.</p></noscript>
+
+<!-- Núcleo (sin interfaz): utilidades, reglas de negocio, datos de ejemplo, almacenamiento, informes -->
+<script src="js/util.js"></script>
+<script src="js/domain.js"></script>
+<script src="js/seed.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/reports.js"></script>
+<!-- Interfaz -->
+<script src="js/ui/base.js"></script>
+<script src="js/ui/ticket.js"></script>
+<script src="js/ui/inicio.js"></script>
+<script src="js/ui/vender.js"></script>
+<script src="js/ui/mercaderia.js"></script>
+<script src="js/ui/caja.js"></script>
+<script src="js/ui/contactos.js"></script>
+<script src="js/ui/informes.js"></script>
+<script src="js/ui/config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
